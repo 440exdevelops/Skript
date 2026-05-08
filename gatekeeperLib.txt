@@ -1,16 +1,14 @@
---[[ SCRIPTIFY GATEKEEPER FUNCTION LIBARY ]]--
---You prob shouldnt be here lol
-
-print('Scriptify Gatekeeper API Loading...')
-
 --// [ROBLOX SERVICES] \\--
 local HttpService = game:GetService("HttpService")
 
 --// [LIBRARY STORAGE CONTAINER] \\--
 local FunctionLibrary = {
+    LoadFunc = {},
 	UNCFunc = {},
 	AuthFunc = {},
-	ScriptFunc = {}
+	ScriptFunc = {},
+
+    RayfieldStorage = {}
 }
 
 --// [CORE FUNCTIONS] \\--
@@ -75,5 +73,24 @@ FunctionLibrary.ScriptFunc.CheckGameSupport = function(SupportedGames, currentPl
 
 	return true, 'Game supported'
 end
+
+--// [SCRIPT LOADING FUCNTIONS] \\--
+FunctionLibrary.LoadFunc.LoadConfiguration = function(type)
+    if type == 'User Configuration' then --Loads user configuration
+		User_Configuration.License_Key = YOUR_KEY
+		User_Configuration.Hardware_ID = RbxAnalyticsService:GetClientId()
+		User_Configuration.User_ID = Player.UserId
+		User_Configuration.Tier = 'Free'
+
+		return true, type .. ' Loaded'
+	end
+end
+
+--// [RAYFIELD FUCNTIONS] \\--
+FunctionLibrary.RayfieldStorage.CreateWindow = function(Rayfield)
+    --Window Creation
+end
+
+
 
 return FunctionLibrary
