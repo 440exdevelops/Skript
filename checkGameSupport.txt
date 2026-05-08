@@ -1,7 +1,0 @@
-return function(SupportedGames, currentPlace)
-	if not table.find(SupportedGames, currentPlace) then
-		return false, 'Game not supported.'
-	end
-
-	return true, 'Game supported.'
-end
