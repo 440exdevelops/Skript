@@ -12,7 +12,6 @@ local FunctionLibrary = {
 }
 
 --// [CORE FUNCTIONS] \\--
-
 local function calculateUNCScore(passed, total, percentage, ResultDir)
     ResultDir.Total = total
     ResultDir.Passed = passed
@@ -26,7 +25,6 @@ local function calculateUNCScore(passed, total, percentage, ResultDir)
 end
 
 --// [UNC TESTING FUCNTIONS] \\--
-
 FunctionLibrary.UNCFunc.UNCTest = function(Static_UNC_Results)
     local testsPassed = 0
 
@@ -42,8 +40,7 @@ FunctionLibrary.UNCFunc.UNCTest = function(Static_UNC_Results)
 end
 
 --// [AUTHORIZATION FUNCTIONS] \\--
-FunctionLibrary.AuthFunc.CheckLicense = function()
-    
+FunctionLibrary.AuthFunc.CheckLicense = function(ServerUrl, UserKey, HardwareId, UserId)
     local success, response = pcall(function()
         return request({
             Url = ServerUrl,
