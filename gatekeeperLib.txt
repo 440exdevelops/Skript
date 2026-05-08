@@ -1,1 +1,80 @@
-return false
+--[[ SCRIPTIFY GATEKEEPER FUNCTION LIBARY ]]--
+--You prob shouldnt be here lol
+
+--// [ROBLOX SERVICES] \\--
+local HttpService = game:GetService("HttpService")
+
+--// [LIBRARY STORAGE CONTAINER] \\--
+local FunctionLibrary = {
+	UNCFunc = {},
+	AuthFunc = {},
+	ScriptFunc = {}
+}
+
+--// [CORE FUNCTIONS] \\--
+
+local function calculateUNCScore(passed, total, percentage, ResultDir)
+    ResultDir.Total = total
+    ResultDir.Passed = passed
+    ResultDir.Percentage = percentage
+    
+    if #ResultDir.TotalFailed > 0 then
+        return false, ResultDir
+    end
+
+    return true, ResultDir
+end
+
+--// [UNC TESTING FUCNTIONS] \\--
+
+FunctionLibrary.UNCFunc.UNCTest = function(Static_UNC_Results)
+    local testsPassed = 0
+
+    for _, functionName in ipairs(Static_UNC_Results.FunctionsToTest) do
+        if getfenv()[functionName] or _G[functionName] or shared[functionName] then
+            testsPassed = testsPassed + 1
+        else
+            table.insert(Static_UNC_Results.TotalFailed, functionName)
+        end
+    end
+
+    return calculateUNCScore(testsPassed, #Static_UNC_Results.FunctionsToTest, (testsPassed / #Static_UNC_Results.FunctionsToTest) * 100, Static_UNC_Results)
+end
+
+--// [AUTHORIZATION FUNCTIONS] \\--
+FunctionLibrary.AuthFunc.CheckLicense = function()
+    
+    local success, response = pcall(function()
+        return request({
+            Url = ServerUrl,
+            Method = 'POST',
+            Headers = { ['Content-Type'] = 'application/json' },
+            Body = HttpService:JSONEncode({
+                API_KEY = UserKey,
+                HARDWARE_ID = HardwareId,
+                USER_ID = UserId
+            })
+        })
+    end)
+    
+    if not success then return false, 'Offline' end
+
+    if response.StatusCode == 200 then
+        return true, 'Authorized'
+    elseif response.StatusCode == 401 then
+        return false, 'Unauthorized'
+    else
+        return false, 'Error: ' .. response.StatusCode
+    end
+end
+
+--// [GENERAL SCRIPT FUNCTIONS] \\--
+FunctionLibrary.ScriptFunc.CheckGameSupport = function(SupportedGames, currentPlace)
+	if not table.find(SupportedGames, currentPlace) then
+		return false, 'Game not supported.'
+	end
+
+	return true, 'Game supported.'
+end
+
+return FunctionLibrary
