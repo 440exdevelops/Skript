@@ -63,17 +63,17 @@ FunctionLibrary.AuthFunc.CheckLicense = function(ServerUrl, UserKey, HardwareId,
     elseif response.StatusCode == 401 then
         return false, 'Unauthorized'
     else
-        return false, 'Error: ' .. response.StatusCode
+        return false, 'Error', response.StatusCode
     end
 end
 
 --// [GENERAL SCRIPT FUNCTIONS] \\--
 FunctionLibrary.ScriptFunc.CheckGameSupport = function(SupportedGames, currentPlace)
 	if not table.find(SupportedGames, currentPlace) then
-		return false, 'Game not supported.'
+		return false, 'Game not supported'
 	end
 
-	return true, 'Game supported.'
+	return true, 'Game supported'
 end
 
 return FunctionLibrary
