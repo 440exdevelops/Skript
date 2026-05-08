@@ -1,4 +1,5 @@
 --// [ROBLOX SERVICES] \\--
+local RbxAnalyticsService = game:GetService('RbxAnalyticsService')
 local HttpService = game:GetService("HttpService")
 
 --// [LIBRARY STORAGE CONTAINER] \\--
