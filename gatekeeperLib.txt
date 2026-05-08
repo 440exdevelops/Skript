@@ -75,7 +75,7 @@ FunctionLibrary.ScriptFunc.CheckGameSupport = function(SupportedGames, currentPl
 end
 
 --// [SCRIPT LOADING FUCNTIONS] \\--
-FunctionLibrary.LoadFunc.LoadConfiguration = function(type, Key)
+FunctionLibrary.LoadFunc.LoadConfiguration = function(User_Configuration, type, Key)
     if type == 'User Configuration' then --Loads user configuration
 		User_Configuration.License_Key = Key
 		User_Configuration.Hardware_ID = RbxAnalyticsService:GetClientId()
