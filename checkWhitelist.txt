@@ -1,12 +1,11 @@
-return function checkWhitelist(ServerUrl, UserKey, HardwareId, UserId)
-	local HttpService = game:GetService("HttpService")
+return function(ServerUrl, UserKey, HardwareId, UserId)
+    local HttpService = game:GetService("HttpService")
+    
     local success, response = pcall(function()
         return request({
             Url = ServerUrl,
             Method = 'POST',
-            Headers = {
-                ['Content-Type'] = 'application/json'
-            },
+            Headers = { ['Content-Type'] = 'application/json' },
             Body = HttpService:JSONEncode({
                 API_KEY = UserKey,
                 HARDWARE_ID = HardwareId,
@@ -15,12 +14,13 @@ return function checkWhitelist(ServerUrl, UserKey, HardwareId, UserId)
         })
     end)
     
-    if not success then return 'Offline' end
+    if not success then return false, 'Offline' end
 
     if response.StatusCode == 200 then
         return true, 'Authorized'
-    end
-    if response.StatusCode == 401 then
+    elseif response.StatusCode == 401 then
         return false, 'Unauthorized'
+    else
+        return false, 'Error: ' .. response.StatusCode
     end
 end
