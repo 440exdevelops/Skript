@@ -1,6 +1,8 @@
 --[[ SCRIPTIFY GATEKEEPER FUNCTION LIBARY ]]--
 --You prob shouldnt be here lol
 
+print('Scriptify Gatekeeper API Loading...')
+
 --// [ROBLOX SERVICES] \\--
 local HttpService = game:GetService("HttpService")
 
