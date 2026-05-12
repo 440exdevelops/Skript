@@ -1,6 +1,12 @@
 local Locations = {
     Eggs = {
-        
+		['Common Egg'] = ,
+		['Spotted Egg'] = ,
+		['Iceshard Egg'] = ,
+        ['4x Luck Tropical Egg'] = ,
+		['Tropical Egg'] = ,
+		['Summer Egg'] = ,
+		['Research Egg'] = ,
     },
     Worlds = {
             ['The Overworld'] = Vector3.new(-0.373160, 9.196313, -21.460686),
@@ -42,7 +48,8 @@ local Locations = {
         ['Blackmarket'] = ,
         ['Dice Merchant'] = ,
         ['Seven Seas Shop'] = ,
-        ['Red Dice Shop'] = 
+		['Tropical Shop'] = ,
+        ['Event Shop'] = 
     },
     Minigames = {
         ['Board Game'] = ,
