@@ -223,13 +223,13 @@ Functions.Interface.CreateWindow = function()
         KeySystem = false  
     })
 	local Tabs = {
-		HomeTab = Window:CreateTab('🏡 Home', 0)
-		HatchingTab = Window:CreateTab('🥚 Hatching', 0)
-		AutoFarmTab = Window:CreateTab('⚡ Auto Farming', 0)
-		TeleportTab = Window:CreateTab('💨 Teleportation & Player', 0)
-		TradingTab = Window:CreateTab('♻️ Pets & Trading', 0)
-		WebhookTab = Window:CreateTab('🚨 Webhooks', 0)
-		SettingsTab = Window:CreateTab('⚙️ Settings', 0)
+		HomeTab = Window:CreateTab('🏡 Home', 0),
+		HatchingTab = Window:CreateTab('🥚 Hatching', 0),
+		AutoFarmTab = Window:CreateTab('⚡ Auto Farming', 0),
+		TeleportTab = Window:CreateTab('💨 Teleportation & Player', 0),
+		TradingTab = Window:CreateTab('♻️ Pets & Trading', 0),
+		WebhookTab = Window:CreateTab('🚨 Webhooks', 0),
+		SettingsTab = Window:CreateTab('⚙️ Settings', 0),
 		CreditsTab = Window:CreateTab('📜 Credits', 0)
 	}
 	
