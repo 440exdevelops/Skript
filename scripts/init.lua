@@ -9,9 +9,9 @@ local Players = cloneref(game:GetService("Players"))
 local Player = Players.LocalPlayer
 
 -- # END SCRIPT #
-return function()
+return function(...)
     -- # CHECK FOR KEY IN ARGS #
-    local LicenseID = Key
+    local LicenseID = ...
     if not Key then
   	    return false, 'No Key Provided', false
     end
