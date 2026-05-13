@@ -134,7 +134,7 @@ Functions.Authorization.CheckLicense = function(LicenseID, HardwareID, UserID)
             Url = APIUrl,
             Method = 'POST',
             Headers = { ['Content-Type'] = 'application/json' },
-            Body = HttpService:JSONEncode({ API_KEY = LicenseID, HARDWARE_ID = HardwareID, USER_ID = UserID })
+            Body = HttpService:JSONEncode({ api_key = LicenseID, hardware_id = HardwareID, user_id = UserID })
         })
     end)
     
