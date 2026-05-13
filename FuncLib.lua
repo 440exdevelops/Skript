@@ -16,7 +16,6 @@ local Configuration = {
 			["TEST-HARDWARE-ID-1234"] = "You are blacklisted for being gay.",
 			["TEST-HARDWARE-ID-5678"] = "You are blacklisted for not being gay.",
 		}
-
 	},
 
 	--// [GLOBAL CONFIGURATION] \\--
@@ -40,7 +39,8 @@ local Configuration = {
                 "request",
                 "writefile",
                 "identifyexecutor",
-                "getgenv"
+                "getgenv",
+				"getfenv"
             }, 
             TotalFailed = {}
         }
@@ -80,7 +80,6 @@ local Configuration = {
 
 		PlayerFlight = { Enabled = false, Speed = 35 }
 	},
-
 }
 
 -- # MODULES / CORE HANDLERS / LIBRARIES #
