@@ -23,8 +23,8 @@ return function(Key)
 
     if GameSupported and Passed and Allowed and Configuration then
 		local Window, Tabs = ScriptifyAPI.Interface.CreateWindow()
-		local returnData = { Window = Window, Tabs = Tabs, Configuration = Configuration }
-        return true, 'User is authorized.', Configuration, returnData
+		local returnData = { Window = Window, Tabs = Tabs }
+        return true, 'User is authorized.', returnData
     elseif not GameSupported then
         return false, 'Game is not supported.', false
     elseif not Passed then
