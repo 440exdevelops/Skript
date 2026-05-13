@@ -1,4 +1,4 @@
--- #FUNCTION STORAGE#
+-- # FUNCTION STORAGE #
 local Functions = {
     General = {},
     Authorization = {},
@@ -6,7 +6,7 @@ local Functions = {
     Other = {}
 }
 
--- #SCRIPT CONFIGURATION VARIABLES#
+-- # SCRIPT CONFIGURATION VARIABLES #
 local Configuration = {
 	--// [AUTH CONFIGURATION] \\--
 	Auth = {
@@ -83,16 +83,16 @@ local Configuration = {
 
 }
 
--- #MODULES / CORE HANDLERS / LIBRARIES#
+-- # MODULES / CORE HANDLERS / LIBRARIES #
 local RayfieldUI = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
--- #ROBLOX SERVICES#
+-- # ROBLOX SERVICES #
 local ReplicatedStorage = cloneref(game:GetService('ReplicatedStorage'))
 local RbxAnalyticsService = cloneref(game:GetService('RbxAnalyticsService'))
 local HttpService = cloneref(game:GetService("HttpService"))
 local PlayerService = cloneref(game:GetService("Players"))
 
--- #CONSTANT VARIABLES / DIRECTORIES#
+-- # CONSTANT VARIABLES / DIRECTORIES #
 --#Constants
 local RemoteFunction = ReplicatedStorage.Shared.Framework.Network.Remote.RemoteFunction
 local RemoteEvent = ReplicatedStorage.Shared.Framework.Network.Remote.RemoteEvent
@@ -125,9 +125,9 @@ local AutoPotions = FeaturesConfig.AutoPotions
 local AutoSell = FeaturesConfig.AutoSell
 local AntiAFK = FeaturesConfig.AntiAFK
 
--- #CORE FUNCTIONS
+-- # CORE FUNCTIONS #
 
--- #AUTHORIZATION FUNCTIONS
+-- # AUTHORIZATION FUNCTIONS #
 Functions.Authorization.CheckLicense = function(LicenseID, HardwareID, UserID)
     local success, response = pcall(function()
         return request({
@@ -151,7 +151,7 @@ Functions.Authorization.CheckLicense = function(LicenseID, HardwareID, UserID)
     end
 end
 
--- #GENERAL SCRIPT FUNCTIONS#
+-- # GENERAL SCRIPT FUNCTIONS #
 Functions.General.ExecutorInfo = function()
     local testsPassed = 0
 
@@ -198,7 +198,7 @@ Functions.General.FireEvent = function(args)
     RemoteEvent:FireServer(unpack(args))
 end
 
--- #RAYFIELD FUCNTIONS#
+-- # RAYFIELD FUCNTIONS #
 Functions.Interface.CreateWindow = function(Rayfield_UI)
     return RayfieldUI:CreateWindow({
         Name = "Bubble Gum Simulator Infinity",
@@ -217,7 +217,7 @@ Functions.Interface.CreateWindow = function(Rayfield_UI)
     })
 end
 
--- #MISC / OTHER FUNCTIONS#
+-- # MISC / OTHER FUNCTIONS #
 Functions.Other.ReturnConfiguration = function()
     if not Configuration then
         warn('Could not find the specified Configuration file. - ReturnConfiguration()')
@@ -227,4 +227,5 @@ Functions.Other.ReturnConfiguration = function()
     return Configuration
 end
 
+--#End Of Script
 return Functions
