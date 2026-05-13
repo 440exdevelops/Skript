@@ -8,20 +8,20 @@ local Players = cloneref(game:GetService("Players"))
 -- # CONSTANT VARIABLES #
 local Player = Players.LocalPlayer
 
--- # CHECK FOR KEY IN ARGS #
-local LicenseID = Key
-if not Key then
-  	return false, 'No Key Provided', false
-end
-
--- # GATEKEEPER INTERACTION #
-local GameSupported = ScriptifyAPI.Authorization.CheckGameSupport(game.PlaceId)
-local Passed, ScoreTable = ScriptifyAPI.General.ExecutorInfo()
-local Allowed, StatusCode = ScriptifyAPI.Authorization.CheckLicense(LicenseID, RbxAnalyticsService:GetClientId(), Player.UserId)
-local Configuration = ScriptifyAPI.Other.ReturnConfiguration()
-
 -- # END SCRIPT #
 return function()
+    -- # CHECK FOR KEY IN ARGS #
+    local LicenseID = Key
+    if not Key then
+  	    return false, 'No Key Provided', false
+    end
+
+    -- # GATEKEEPER INTERACTION #
+    local GameSupported = ScriptifyAPI.Authorization.CheckGameSupport(game.PlaceId)
+    local Passed, ScoreTable = ScriptifyAPI.General.ExecutorInfo()
+    local Allowed, StatusCode = ScriptifyAPI.Authorization.CheckLicense(LicenseID, RbxAnalyticsService:GetClientId(), Player.UserId)
+    local Configuration = ScriptifyAPI.Other.ReturnConfiguration()
+
     if GameSupported and Passed and Allowed and Configuration then
         return true, 'User is authorized.', ScriptifyAPI.Interface.CreateWindow()
     elseif not GameSupported then
