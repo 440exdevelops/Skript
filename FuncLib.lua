@@ -197,7 +197,7 @@ Functions.General.FireEvent = function(args)
 
     RemoteEvent:FireServer(unpack(args))
 end
-Function.General.TeleportPlayer = function(position)
+Functions.General.TeleportPlayer = function(position)
     local rootPart = Player.Character and Player.Character:FindFirstChild("HumanoidRootPart")
     if rootPart then
         rootPart.CFrame = CFrame.new(position)
