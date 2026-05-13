@@ -11,8 +11,8 @@ local Player = Players.LocalPlayer
 -- # END SCRIPT #
 return function(...)
     -- # CHECK FOR KEY IN ARGS #
-    local LicenseID = ...
-    if not Key then
+    local LicenseID = ... or ""
+    if LicenseID == "" then
   	    return false, 'No Key Provided', false
     end
 
