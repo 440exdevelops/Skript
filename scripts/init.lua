@@ -9,15 +9,15 @@ local Players = cloneref(game:GetService("Players"))
 local Player = Players.LocalPlayer
 
 -- # CHECK FOR KEY IN ARGS #
-local Key = ...
+local LicenseID = Key
 if not Key then
-  return false, 'No Key Provided', false
+  	return false, 'No Key Provided', false
 end
 
 -- # GATEKEEPER INTERACTION #
 local GameSupported = ScriptifyAPI.Authorization.CheckGameSupport(game.PlaceId)
 local Passed, ScoreTable = ScriptifyAPI.General.ExecutorInfo()
-local Allowed, StatusCode = ScriptifyAPI.Authorization.CheckLicense(key, RbxAnalyticsService:GetClientId(), Player.UserId)
+local Allowed, StatusCode = ScriptifyAPI.Authorization.CheckLicense(LicenseID, RbxAnalyticsService:GetClientId(), Player.UserId)
 local Configuration = ScriptifyAPI.Other.ReturnConfiguration()
 
 -- # END SCRIPT #
@@ -31,8 +31,8 @@ return function()
     elseif not Allowed and StatusCode == 401 then
         return false, 'User is not authorized.', false
     elseif not Allowed and StatusCode == 404 then
-        return false, 'The API is not able to read data. Contact developers.', false
+        return false, 'The API is not able to read data. Please contact our developers if this issue persists.', false
     elseif not Configuration then
-        return false, 'Unexpected error fetching Configuration. Contact developers.', false
+        return false, 'Unexpected error fetching Configuration. Please contact our developers if this issue persists.', false
     end
 end
