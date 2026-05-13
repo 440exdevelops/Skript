@@ -16,7 +16,6 @@ local Configuration = {
 			["TEST-HARDWARE-ID-1234"] = "You are blacklisted for being gay.",
 			["TEST-HARDWARE-ID-5678"] = "You are blacklisted for not being gay.",
 		}
-
 	},
 
 	--// [GLOBAL CONFIGURATION] \\--
@@ -40,7 +39,8 @@ local Configuration = {
                 "request",
                 "writefile",
                 "identifyexecutor",
-                "getgenv"
+                "getgenv",
+				"getfenv"
             }, 
             TotalFailed = {}
         }
@@ -80,7 +80,6 @@ local Configuration = {
 
 		PlayerFlight = { Enabled = false, Speed = 35 }
 	},
-
 }
 
 -- # MODULES / CORE HANDLERS / LIBRARIES #
@@ -187,7 +186,7 @@ Functions.General.ExecutorInfo = function()
 end
 Functions.General.FireEvent = function(args)
     local success, RemoteEvent = pcall(function()
-        return ReplicatedStorage.Shared.Framework.Network.Remote.RemoteEvent
+    	return ReplicatedStorage.Shared.Framework.Network.Remote.RemoteEvent
     end)
 
     if not RemoteEvent then warn('Could not locate RemoteEvent/RemoteFunction. - FireEvent()') return end
@@ -200,9 +199,9 @@ end
 Functions.General.TeleportPlayer = function(position)
     local rootPart = Player.Character and Player.Character:FindFirstChild("HumanoidRootPart")
     if rootPart then
-        rootPart.CFrame = CFrame.new(position)
+    	rootPart.CFrame = CFrame.new(position)
     else
-        return
+    	return
     end
 end
 
