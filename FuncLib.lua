@@ -21,10 +21,10 @@ local Configuration = {
 
 	--// [GLOBAL CONFIGURATION] \\--
 	Global = {
-		ScriptVersion = 1.0.0,
+		ScriptVersion = '1.0.0',
 		Changelogs = {
 			['1.0.0'] = 'Menu Created.'
-		}
+		},
 
 		MenuToggleKey = "K",
 		MenuTheme = "Default",
