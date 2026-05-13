@@ -1,12 +1,29 @@
 local Locations = {
     Eggs = {
-		['Common Egg'] = ,
-		['Spotted Egg'] = ,
-		['Iceshard Egg'] = ,
-        ['4x Luck Tropical Egg'] = ,
-		['Tropical Egg'] = ,
-		['Summer Egg'] = ,
-		['Research Egg'] = ,
+        ['Common Egg'] = Vector3.new(-83.68154907226562, 10.116671562194824, 2.3523800373077393),
+        ['Spotted Egg'] = Vector3.new(-94.31983947753906, 10.116671562194824, 7.921272277832031),
+        ['Iceshard Egg'] = Vector3.new(-117.41377258300781, 10.116671562194824, 9.704568862915039),
+        ['Spikey Egg'] = Vector3.new(-126.41293334960938, 10.116671562194824, 5.943349361419678),
+        ['Magma Egg'] = Vector3.new(-134.1661834716797, 10.11651611328125, 0.00850481167435646),
+        ['Crystal Egg'] = Vector3.new(-140.27157592773438, 10.116671562194824, -7.449162483215332),
+        ['Lunar Egg'] = Vector3.new(-144.11761474609375, 10.116671562194824, -16.73031997680664),
+        ['Void Egg'] = Vector3.new(-146.0588836669922, 10.11661434173584, -26.6077823638916),
+        ['Hell Egg'] = Vector3.new(-143.73858642578125, 10.116671562194824, -36.527244567871094),
+        ['Nightmare Egg'] = Vector3.new(-141.69216918945312, 10.116671562194824, -45.27381134033203),
+        ['Rainbow Egg'] = Vector3.new(-136.02108764648438, 10.116377830505371, -52.87196350097656),
+        ['Showman Egg'] = Vector3.new(-128.7060546875, 10.116671562194824, -58.83161163330078),
+        ['Mining Egg'] = Vector3.new(-120.30867004394531, 10.116671562194824, -63.06536102294922),
+        ['Cyber Egg'] = Vector3.new(-94.46053314208984, 10.116471290588379, -61.9702033996582),
+        ['Neon Egg'] = Vector3.new(-84.51712036132812, 10.116469383239746, -56.65692138671875),
+        ['Icy Egg'] = Vector3.new(-59.54534149169922, 13.112435340881348, -2.7659406661987305),
+        ['Vine Egg'] = Vector3.new(-65.13047790527344, 13.112435340881348, 7.783048152923584),
+        ['Lava Egg'] = Vector3.new(-72.55361938476562, 13.112435340881348, 15.743362426757812),
+        ['Atlantis Egg'] = Vector3.new(-81.40076446533203, 13.112435340881348, 21.917713165283203),
+        ['Classic Egg'] = Vector3.new(-91.41121673583984, 13.112435340881348, 26.074920654296875),
+        ['Tropical Egg'] = Vector3.new(0,0,0),
+		['Summer Egg'] = Vector3.new(0,0,0),
+		['Research Egg'] = Vector3.new(0,0,0),
+		['4x Luck Tropical Egg'] = Vector3.new(0,0,0)
     },
     Worlds = {
             ['The Overworld'] = Vector3.new(-0.373160, 9.196313, -21.460686),
@@ -42,31 +59,30 @@ local Locations = {
         }
     },
     ItemShops = {
-		['Merchant thing'] = ,
-        ['Shadow Shop'] = ,
-        ['Alien Shop'] = ,
-        ['Blackmarket'] = ,
-        ['Dice Merchant'] = ,
-        ['Seven Seas Shop'] = ,
-		['Tropical Shop'] = ,
-        ['Event Shop'] = 
+        ['Shadow Shop'] = Vector3.new(2374.94287109375, 3160.836181640625, 829.0262451171875),
+        ['Alien Shop'] = Vector3.new(-36.61836624145508, 15971.7177734375, -86.44258880615234),
+        ['Blackmarket'] = Vector3.new(57.240577697753906, 10140.56640625, 165.45433044433594),
+        ['Dice Merchant'] = Vector3.new(9891.9189453125, 26.64974021911621, 222.10838317871094),
+        ['Seven Seas Shop'] = Vector3.new(-23628.78515625, 7.884683609008789, 26.608417510986328),
+		['Tropical Shop'] = Vector3.new(0,0,0),
+        ['Event Shop'] = Vector3.new(0,0,0)
     },
     Minigames = {
-        ['Board Game'] = ,
-        ['Pet Match'] = ,
-        ['Cart Escape'] = ,
-        ['Robot Claw'] = ,
-        ['Hyper Darts'] = ,
-        ['Doggy Jump'] = 
+        ['Board Game'] = Vector3.new(9854.3251953125, 26.649763107299805, 204.5503387451172),
+        ['Pet Match'] = Vector3.new(9909.5673828125, 2907.70947265625, 224.4033966064453),
+        ['Cart Escape'] = Vector3.new(9899.5341796875, 7681.52783203125, 252.65867614746094),
+        ['Robot Claw'] = Vector3.new(9889.53515625, 13409.548828125, 259.81884765625),
+        ['Hyper Darts'] = Vector3.new(9862.0107421875, 20089.40234375, 253.5572509765625),
+        ['Doggy Jump'] = Vector3.new(1.964316487312317, 2666.46630859375, -26.469263076782227)
     },
     SellLocations = {
-        ['Overworld'] = 
-        ['Twilight'] = '',
-        ['Minigame Paradise'] = '',
-        ['Robot Factory'] = ''
+        ['Overworld'] = Vector3.new(75.93047332763672, 9.196322441101074, -113.5882339477539),
+        ['Twilight'] = Vector3.new(-68.99311828613281, 6862.482421875, 114.40776824951172),
+        ['Minigame Paradise'] = Vector3.new(9920.2294921875, 26.64975929260254, 138.83274841308594),
+        ['Robot Factory'] = Vector3.new(9855.60546875, 13409.548828125, 240.95294189453125)
     },
 	Wheelspins = {
-		['Floating Island Wheelspin'] = Vector3.new(-19.214790, 425.601105, 172.936478)
+		['Floating Island Wheelspin'] = Vector3.new(-17.81562614440918, 425.6011047363281, 171.26129150390625)
 	}
 }
 
