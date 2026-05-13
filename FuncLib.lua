@@ -16,14 +16,15 @@ local Configuration = {
 			["TEST-HARDWARE-ID-1234"] = "You are blacklisted for being gay.",
 			["TEST-HARDWARE-ID-5678"] = "You are blacklisted for not being gay.",
 		}
+
 	},
 
 	--// [GLOBAL CONFIGURATION] \\--
 	Global = {
-		ScriptVersion = '1.0.0',
+		ScriptVersion = 1.0.0,
 		Changelogs = {
 			['1.0.0'] = 'Menu Created.'
-		},
+		}
 
 		MenuToggleKey = "K",
 		MenuTheme = "Default",
@@ -39,8 +40,7 @@ local Configuration = {
                 "request",
                 "writefile",
                 "identifyexecutor",
-                "getgenv",
-				"getfenv"
+                "getgenv"
             }, 
             TotalFailed = {}
         }
@@ -80,6 +80,7 @@ local Configuration = {
 
 		PlayerFlight = { Enabled = false, Speed = 35 }
 	},
+
 }
 
 -- # MODULES / CORE HANDLERS / LIBRARIES #
@@ -133,7 +134,7 @@ Functions.Authorization.CheckLicense = function(LicenseID, HardwareID, UserID)
             Url = APIUrl,
             Method = 'POST',
             Headers = { ['Content-Type'] = 'application/json' },
-            Body = HttpService:JSONEncode({ api_key = LicenseID, hardware_id = HardwareID, user_id = UserID })
+            Body = HttpService:JSONEncode({ API_KEY = LicenseID, HARDWARE_ID = HardwareID, USER_ID = UserID })
         })
     end)
     
@@ -148,6 +149,13 @@ Functions.Authorization.CheckLicense = function(LicenseID, HardwareID, UserID)
     else
         return false, response.StatusCode
     end
+end
+Functions.Authorization.CheckGameSupport = function(currentPlace)
+	if not table.find(SupportedGames, currentPlace) then
+		return false
+	end
+
+	return true
 end
 
 -- # GENERAL SCRIPT FUNCTIONS #
@@ -177,13 +185,6 @@ Functions.General.ExecutorInfo = function()
     
     return true, UNCScoring
 end
-Functions.General.CheckGameSupport = function(currentPlace)
-	if not table.find(SupportedGames, currentPlace) then
-		return false
-	end
-
-	return true
-end
 Functions.General.FireEvent = function(args)
     local success, RemoteEvent = pcall(function()
         return ReplicatedStorage.Shared.Framework.Network.Remote.RemoteEvent
@@ -196,9 +197,17 @@ Functions.General.FireEvent = function(args)
 
     RemoteEvent:FireServer(unpack(args))
 end
+Function.General.TeleportPlayer = function(position)
+    local rootPart = Player.Character and Player.Character:FindFirstChild("HumanoidRootPart")
+    if rootPart then
+        rootPart.CFrame = CFrame.new(position)
+    else
+        return
+    end
+end
 
 -- # RAYFIELD FUCNTIONS #
-Functions.Interface.CreateWindow = function(Rayfield_UI)
+Functions.Interface.CreateWindow = function()
     return RayfieldUI:CreateWindow({
         Name = "Bubble Gum Simulator Infinity",
         Icon = 0,
