@@ -238,11 +238,6 @@ end
 
 -- # MISC / OTHER FUNCTIONS #
 Functions.Other.ReturnConfiguration = function()
-    if not Configuration then
-        warn('Could not find the specified Configuration file. - ReturnConfiguration()')
-        return false, {}
-    end
-
     return Configuration
 end
 
