@@ -222,17 +222,18 @@ Functions.Interface.CreateWindow = function()
         Discord = { Enabled = false, Invite = "noinvitelink", RememberJoins = true },
         KeySystem = false  
     })
+	local Tabs = {
+		HomeTab = Window:CreateTab('🏡 Home', 0)
+		HatchingTab = Window:CreateTab('🥚 Hatching', 0)
+		AutoFarmTab = Window:CreateTab('⚡ Auto Farming', 0)
+		TeleportTab = Window:CreateTab('💨 Teleportation & Player', 0)
+		TradingTab = Window:CreateTab('♻️ Pets & Trading', 0)
+		WebhookTab = Window:CreateTab('🚨 Webhooks', 0)
+		SettingsTab = Window:CreateTab('⚙️ Settings', 0)
+		CreditsTab = Window:CreateTab('📜 Credits', 0)
+	}
 	
-	local HomeTab = Window:CreateTab('🏡 Home', 0)
-	local HatchingTab = Window:CreateTab('🥚 Hatching', 0)
-	local AutoFarmTab = Window:CreateTab('⚡ Auto Farming', 0)
-	local TeleportTab = Window:CreateTab('💨 Teleportation & Player', 0)
-	local TradingTab = Window:CreateTab('♻️ Pets & Trading', 0)
-	local WebhookTab = Window:CreateTab('🚨 Webhooks', 0)
-	local SettingsTab = Window:CreateTab('⚙️ Settings', 0)
-	local CreditsTab = Window:CreateTab('📜 Credits', 0)
-	
-    return Window
+    return Window, Tabs
 end
 
 -- # MISC / OTHER FUNCTIONS #
