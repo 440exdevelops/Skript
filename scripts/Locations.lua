@@ -23,7 +23,9 @@ local Locations = {
         ['Tropical Egg'] = Vector3.new(-299.934204, 11.999991, -5008.437012),
 		['Summer Egg'] = Vector3.new(0,0,0),
 		['Research Egg'] = Vector3.new(0,0,0),
-		['4x Luck Tropical Egg'] = Vector3.new(0,0,0)
+		['Flower Kingdom Egg'] = Vector3.new(),
+		['4x Luck Tropical Egg'] = Vector3.new(0,0,0),
+		['4x Luck Flower Kingdom Egg'] = Vector3.new(),
     },
     Worlds = {
         ['The Overworld'] = Vector3.new(-0.373160, 9.196313, -21.460686),
